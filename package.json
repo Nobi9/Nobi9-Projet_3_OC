@@ -1,0 +1,23 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Nobi9/Nobi9-Projet_3_OC-.git"
+  },
+  "author": "Kuhnholtz-Lordat Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nobi9/Nobi9-Projet_3_OC-/issues"
+  },
+  "homepage": "https://github.com/Nobi9/Nobi9-Projet_3_OC-#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "normalize.css": "^8.0.1"
+  }
+}

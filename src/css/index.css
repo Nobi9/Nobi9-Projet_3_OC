@@ -1,0 +1,52 @@
+/* ========================================= Fonts ========================================= */
+@font-face {
+    font-family: 'Roboto', 'Shrikand';
+    src: 
+      url('/src/css/fonts/Roboto/Roboto-Regular.ttf')
+      url('/src/css/fonts/Shrikhand/Shrikhand-Regular.ttf')
+  }
+  
+  /* ========================================= General ========================================= */
+  
+  /* ============================== */
+  /* ====== Global Settings ======= */
+  /* ============================== */
+  * {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box
+  }
+  
+  body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto';
+    font-size: 12px;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* ====== Global witdhs ====== */  
+
+  /* 
+  machin {
+      width: 100%;
+      max-width: 
+      min-width: 
+  }
+*/
+
+/* ====== Global margins ====== */
+/* ====== Global paddings ====== */
+/* ====== Global fonts ====== */
+
+/* ========================================== Header ========================================= */
+
+/* ========================================== Main ========================================= */
+
+/* ========================================== Footer ========================================= */
+
