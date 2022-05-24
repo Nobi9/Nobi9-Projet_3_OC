@@ -30,6 +30,8 @@
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 12px;
+    display: flex;
+    justify-content: center;
   }
 
 
