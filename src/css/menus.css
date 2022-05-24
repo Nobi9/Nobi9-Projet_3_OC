@@ -1,0 +1,160 @@
+
+    .topbar {
+        display: flex;
+        align-items: center;
+    }
+        h1 {
+            width: 100%;
+            padding: 20px 0 15px;
+            margin: 0;
+            min-width: 240px;
+            text-align: center;
+        }
+
+        .fa-arrow-left {
+            font-size: 20px;
+            padding: 20px 20px 15px 20px;
+            justify-self: flex-start;
+        }
+    img {
+        position: relative;
+        max-height: 250px;
+        border-radius: 0px;
+        z-index: 1;
+    }
+
+main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top : -40px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: #f7f6f7;
+    z-index: 2;
+    padding: 0 15px;
+}
+    .main-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10px
+    }
+
+        h2 {
+            width: 100%;
+            text-align: left;
+            font-family: 'shrikhand';
+            font-size: 24px;
+            font-weight: 400;
+        }
+    .menu-part {
+        min-width: 270px;
+        max-width: 500px;
+        margin-bottom: 35px;
+        align-self: center;
+    }
+    .menu-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+        .menu-card {
+            width: 100%;
+            max-width: 350px;
+            align-self: center;
+            cursor: pointer;
+        }
+
+
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+            
+        }
+
+            .underline {
+                border-bottom: solid #99E2D0 3px;
+                padding-bottom: 1px;
+            }
+       
+            .menu-card {
+                min-width: 270px;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 3px 10px #dadadb;
+                padding: 15px;
+                margin-top : 15px;
+            }
+                .menu-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                }
+                    h4 {
+                        font-size: 16px
+                    }
+                    .menu-text p {
+                        font-size: 14px;
+                        padding: 0 5px;
+                    }
+                .price {
+                    align-self:flex-end;
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding: 0 15px;
+                }
+
+                .hovercheck {
+                    display: none
+                }
+.order-button {
+    margin-bottom: 40px;
+   align-self:center;
+}
+
+@media (min-width: 769px) and (max-width: 992px){
+    .topbar {
+        min-width: 769px;
+        max-width: 992px
+    }
+    h2 {
+        padding-left: 20px;
+    }
+
+}
+@media (min-width: 993px) {
+    .topbar {
+        min-width: 993px;
+        max-width: 1500px
+    }
+    .main-topbar {
+        min-width: 800px;
+    }
+    .fa-heart {
+        font-size: 24px;
+    }
+    main {
+        padding: 30px 50px;
+    }
+    .menu-part {
+        max-width: 1900px;
+        padding: 0 30px;
+    }
+    .menu-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+        .menu-card {
+            width: 100%;
+            justify-self: center;
+            margin: 30px 30px 0 30px;
+        }
+}
