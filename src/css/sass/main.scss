@@ -1,0 +1,17 @@
+//TEST
+// 1.Utils
+@import "./variables"; // Pas d'underscore ni d'extension lors de l'import
+@import "./mixins";
+@import "./placeholders";
+@import "./fonctions";
+// 2.Vendors
+// 3.Base
+@import "./base";
+// 4.Components
+@import "./components";
+// 5.Layout
+@import "./layout";
+// 6.Pages
+@import "./pages/home";
+@import "./pages/menus";
+// 7.Themes

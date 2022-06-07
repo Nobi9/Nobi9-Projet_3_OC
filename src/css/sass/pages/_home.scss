@@ -1,0 +1,176 @@
+.header {  
+    // topbar in components
+    &__form {
+        @include full-sizing($small-min-w, $small-max-w);
+        background-color: $medium-2;
+        @extend %flex-center-center;
+        height: 40px;
+        box-shadow: 0 3px 3px inset $medium-1;
+        .fa-location-dot {
+            @extend %typo-fa-small, %margin-left30;
+        }
+        &__location {
+            @extend %padding-left10, %typo-big-text;
+            width : 170px;
+            border: none;
+            color: $ultra-dark;
+            background-color: inherit;
+            &::placeholder {
+                color: $ultra-dark;
+                @extend %padding-left10, %typo-big-text;
+                font-weight: 400;
+            }
+        }
+    }  
+    &__site-desc {
+        @include full-sizing($small-min-w, $small-max-w);
+        @extend %padding40_15;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $light;
+        &__h2 {
+          @extend %typo-subtitle, %margin0, %padding0;
+          text-align: center;
+          width: 100%;
+          max-width: $components-mx-width
+        }
+        &__p {
+          @extend %typo-big-text, %margin15;
+          text-align: center;
+        }
+    }
+}
+.main-home {
+    @include full-sizing($small-min-w, $small-max-w);
+}
+.op-section {
+    @include full-sizing($small-min-w, $small-max-w);
+    @extend %padding40_15;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $ultra-light;
+    &__title {
+      @extend %typo-subtitle;
+      @extend %margin0;
+      width: 100%;
+      transition: width 1s ease-out;
+    }
+    &__ops {
+        padding-inline-start: 0px;
+        @extend %padding-left10, %margin-right20, %margin-left20;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-self: center;
+  }
+}
+.rest-section {
+    @include full-sizing($small-min-w, $small-max-w);
+    @extend %padding40_15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $light;
+    
+    &__title {
+      
+      @extend %typo-subtitle, %margin0, %padding-right15, %padding-left15;
+      transition: width 1s ease-out;
+      width: 100%;
+    }
+    &__cards {
+        width: 100%;
+        align-self: center;
+        min-width: 270px;
+        max-width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @extend %margin-top20;
+    }
+}
+@media #{$medium-screen} {
+    .header {
+        &__form {
+          @include full-sizing($medium-min-w, $medium-max-w);
+        }
+        &__site-desc {
+          @include full-sizing($medium-min-w, $medium-max-w);
+        }
+    }
+    .main-home {
+        @include full-sizing($medium-min-w, $medium-max-w);
+      }
+      .op-section__title, .rest-section__title {
+        margin-bottom: 30px;
+        margin-top: 30px;
+        padding: 0;
+      }
+      .rest-section__title {  // Ici on passe en width: px pour pouvoir faire une transition
+        width: 130px;         // car il n'y a pas de transitions sur text-align
+      }
+      .op-section__title {
+        width: 175px;
+      }
+      
+      .op-section {
+        @include full-sizing($medium-min-w, $medium-max-w);
+        &__ops__op {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+      .rest-section {
+        @include full-sizing($medium-min-w, $medium-max-w);
+      }
+}
+@media #{$large-screen}{
+    .header {
+        &__form {
+          @include full-sizing($large-min-w, $large-max-w);
+        }
+        &__site-desc {
+          @include full-sizing($large-min-w, $large-max-w);
+        }
+    }
+    .main-home {
+      @include full-sizing($large-min-w, $large-max-w);
+    }
+    .op-section__title, .rest-section__title {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      padding: 0;
+    }
+    .rest-section__title {  // Ici on passe en width: px pour pouvoir faire une transition
+      width: 130px;         // car il n'y a pas de transitions sur text-align
+    }
+    
+    .op-section {
+      @include full-sizing($large-min-w, $large-max-w);
+      &__title {
+        width: 175px;
+      }
+      &__ops {
+        width: 100%;
+        max-width: $components-mx-width;
+        flex-direction: row;
+        justify-content: space-around;
+        &__op {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .rest-section {
+      @include full-sizing($large-min-w, $large-max-w);
+      &__cards {
+        min-width: 930px;
+        max-width: $components-mx-width;
+      }
+    }
+}

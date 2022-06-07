@@ -1,0 +1,155 @@
+/* ========== Operation ========== */
+.op-section__ops__op {
+    @extend %margin-left20;
+    color: $dark;
+    height: 70px;
+    width: 260px;
+    box-shadow: 0 3px 10px $medium-2;
+    border-radius: 25px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 1s; // ne pas le placer sur le hover permet la transition dans les deux sens
+    &:hover {
+        background-color: $primary-color-lightened;
+        color: $primary-color;
+    }
+    &__number {
+        @extend %typo-text, %margin-right20;
+        color: $ultra-light;
+        background-color: $primary-color;
+        height: 25px;
+        width: 25px;
+        line-height:25px;
+        border-radius: 50%;
+        @extend %flex-center-center;
+        margin-left: -12.5px;   
+    }
+    &__fa-solid {
+        @extend %typo-fa, %margin-right20;
+        color: inherit;
+    }
+    &__txt {
+        color: $ultra-dark;
+        font-weight: bold;
+    }
+}
+ /* ========== Gradient Button ========== */
+.gradient-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    @extend %typo-big-text;
+    font-weight: 400;
+    color: $ultra-light;
+    @include box-shadow($medium-1);
+    @include gradient-secondary-to-primary($secondary-color, $primary-color, 175deg);
+    transition: box-shadow 1s ease-out;
+    &:hover {
+        @include lightened-gradient-secondary-to-primary($secondary-color, $primary-color, 175deg);
+        @include box-shadow(darken($medium-1, 20%));
+    }
+  }
+  /* ========== Card ========== */
+.card {
+    width: 100%;
+    max-width: 270px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px;
+    @include box-shadow($medium-2);
+    transition: box-shadow 0.5s ease-out;
+    &:hover {
+        @include box-shadow(darken($medium-2, 20%));
+    }
+    &__a {
+        &:link {
+            color: $ultra-dark;
+        }
+        &:visited {
+            color: $ultra-dark;
+        }
+        &__img-container {
+            position: relative;
+            &__new {
+                color: $tertiary-color-darkened;
+                background-color: $tertiary-color;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                z-index: 2;
+                box-shadow: 0 0 2px $dark;
+                border-radius: 2px;
+                padding: 5px 10px;
+                font-weight: bold;
+            }
+            &__img{
+                width: 100%;
+                object-fit: cover;
+                height: 70%;
+                max-height: 160px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                z-index: 1;
+            }
+        }
+        &__info {
+        @extend %padding5;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+            &__left-side {
+                h4 {
+                @extend %typo-text;
+                font-weight: bold;
+                }
+                p {
+                @extend %typo-text;
+                }
+            }
+            // component fa-heart
+    }
+  }
+}
+ /* ========== fa-heart gradient ========== */
+.menu-sol-heart {
+     right: 49px;
+     @extend %typo-fa;
+}
+.menu-reg-heart {
+    right: 50px;
+}
+.home-sol-heart {
+    top: 9px;
+    right: 19px;
+}
+.home-reg-heart {
+    top: 5px;
+    right: 5px;
+    @extend %padding5_15, %typo-fa;
+}
+.solid-heart {
+    font-size: 22px;
+    position: absolute;                             // Positionne les 2 coeurs l'un sur l'autre
+    z-index: 1;                                     // Solid heart est sous regular
+    -webkit-background-clip: text;                  // Attache le background au text
+    //background-clip: text
+    -webkit-text-fill-color: transparent;           // Pour permettre de le rendre transparent et plus tard lui attribuer une couleur
+    opacity: 0;                                     
+    transition: opacity 1s ease-out;                // Transition placé sur élément avant :hover, pour avoir le retour également en transition
+}
+
+.regular-heart {
+    @extend %typo-fa;
+    position: absolute;                             // Positionne les 2 coeurs l'un sur l'autre
+    z-index: 2;
+    &:hover~.solid-heart {                      // Au :hover
+        @include gradient-secondary-to-primary($secondary-color, $primary-color, 0deg); // On remplit le coeur avec une couleur gradient
+        opacity: 1;
+    }
+    &:hover {
+        opacity: 0;
+        transition: opacity 2s ease-out;            // Transition placé sur :hover, pour retrouver immédiatement la bordure au retour
+    }
+}
+    

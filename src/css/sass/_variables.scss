@@ -1,0 +1,37 @@
+
+/* ========== Colors ==========*/
+$primary-color: #9356DC;
+$primary-color-lightened: #f5edff;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$tertiary-color-darkened: #229a7c;
+
+$ultra-dark: #353535;
+$dark: grey;
+$medium-1: #dadadb;
+$medium-2: #eaeaea;
+$light: #f7f6f7;
+$ultra-light: #fff;
+
+/*========== Sizes ==========*/
+
+/*$breakpoint1: 300px;
+$breakpoint2: 768px; 
+$breakpoint3: 769px;
+$breakpoint4: 992px;
+$breakpoint5: 993px;
+$breakpoint6: 1500px;*/
+
+$small-sreen: " (max-width: 768px)";
+$small-min-w: 300px;
+$small-max-w: 768px;
+
+$medium-screen: " (min-width: 769px) and (max-width: 992px)";
+$medium-min-w: 769px;
+$medium-max-w: 992px;
+
+$large-screen: " (min-width: 993px)";
+$large-min-w: 993px;
+$large-max-w: 1500px;
+
+$components-mx-width: 80%;

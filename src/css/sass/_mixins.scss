@@ -1,0 +1,25 @@
+/* ========= Sizing & margins/paddings ========== */
+@mixin full-sizing($min-w, $max-w) {
+    min-width: $min-w;
+    max-width: $max-w;
+    width: 100%;
+}
+
+/* ========= Gradient Button ========== */
+// Theses two mixins make gradient-button colors + lighten on :hover
+@mixin gradient-secondary-to-primary($color1,  $color2, $orientation) {
+    background-color: $color1;
+    background-image: linear-gradient($orientation, $color1 0%, $color2 90%);
+}
+@mixin lightened-gradient-secondary-to-primary($color1,  $color2, $orientation) {
+    background-image: linear-gradient($orientation, lighten($color1,5%) 0%, lighten($color2,5%) 90%);
+}
+
+/* ========= Box shadows ========== */
+@mixin box-shadow($color: $clr) {
+    box-shadow: 0 3px 7px $color;
+}
+/* ========= Text shadows ========== */
+@mixin text-shadow($color: $clr) {
+    text-shadow: 0 1px $color;
+}

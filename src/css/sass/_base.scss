@@ -1,0 +1,179 @@
+/* ========== Global settings ==========*/
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12px;
+    @extend %flex-center-center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+input:focus, textarea:focus, select:focus{
+  outline: none;
+  border: none;
+}
+ul {
+  padding-inline-start:0px;
+}
+p, h4 {
+  @extend %margin0, %padding5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+.operation, .new, .footer-line a, .footer-line p {
+    font-weight: bold;
+}
+.active {               // Switch class in html will enable/disable the <div>
+  display: block;
+}
+.inactive {
+  display: none;
+}
+/*=================================== Header ========================================= */
+.sizing-1 {
+    @include full-sizing($small-min-w, $small-max-w);
+}
+.header {
+  &__topbar {
+      @include full-sizing($small-min-w, $small-max-w);
+      position: relative;
+      &__a {
+          @extend %padding-top20, %padding-bottom20, %padding-left30;
+          position: absolute;
+          top: 0;
+          left: 0;
+          // class active / inactive in html will display block / none
+          &:visited {
+              color: $ultra-dark;
+          }
+      &__fa-solid{
+          @extend %typo-fa;
+      }
+      }
+      &__h1 {
+      @include full-sizing($small-min-w, $small-max-w);
+      @extend %margin0, %typo-title, %padding-top20, %padding-bottom10;
+      text-align: center;
+      } 
+  }
+}
+
+.footer {
+    @include full-sizing($small-min-w, $small-max-w);
+    @extend %padding15;
+    background-color: $ultra-dark;
+    :visited {
+      color: $ultra-light;
+    }
+    h5 {
+        @extend %margin0, %typo-title, %padding-top10, %padding-bottom20; 
+        font-size: 24px;
+        color: $ultra-light;
+    }
+    &__lines {
+        &__line {
+            color: $ultra-light;
+            .link-1 {
+              display: flex;
+                align-items: center;
+                &:hover {
+                  @include text-shadow($ultra-light);
+                }
+                &:link {
+                  color: $ultra-light;
+                }
+                &:visited {
+                  color: $ultra-light;
+                }
+                &__fa-solid {
+                    @extend %typo-big-text;
+                    color: $ultra-light;
+                }
+                &__text {
+                    @extend %padding-left10, %typo-text;
+                }
+            }
+            .link-2 {
+              &:hover {
+                @include text-shadow($ultra-light);
+                }
+                &:link {
+                  color: $ultra-light;
+                }
+                &:visited {
+                  color: $ultra-light;
+                }
+                display: flex;
+                align-items: center;
+                &__p { 
+                  @extend %typo-text;     
+                }
+            }
+        }
+    }
+}
+/* ========================================== Media Queries ========================================= */
+@media #{$medium-screen} {
+  .sizing-1 {
+      @include full-sizing($medium-min-w, $medium-max-w);
+  }
+  .header {
+    @include full-sizing($medium-min-w, $medium-max-w); 
+    &__topbar {
+      @include full-sizing($medium-min-w, $medium-max-w);
+      &__h1 {
+        @include full-sizing($medium-min-w, $medium-max-w);
+      }
+  }
+  }
+  .footer {
+    @include full-sizing($medium-min-w, $medium-max-w);
+    h5 {
+      text-align: center;
+    }
+    &__lines {
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media #{$large-screen}{
+  .sizing-1 {
+    @include full-sizing($large-min-w, $large-max-w);
+  }
+  .header {
+    @include full-sizing($large-min-w, $large-max-w); 
+    &__topbar {
+      @include full-sizing($medium-min-w, $medium-max-w);
+      &__h1 {
+        @include full-sizing($medium-min-w, $medium-max-w);
+      }
+    }
+  }
+  .footer {
+    @include full-sizing($large-min-w, $large-max-w);
+    h5 {
+      text-align: center;
+    }
+    &__lines {
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+

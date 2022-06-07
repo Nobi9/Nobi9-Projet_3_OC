@@ -1,0 +1,153 @@
+/* ========== Flexbox ==========*/
+%flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ========== Margins ==========*/
+%margin0 {
+    margin: 0;
+}
+%margin15 {
+    margin: 15px;
+}
+/* margin-top */
+%margin-top20 {
+    margin-top: 20px;
+}
+%margin-top10 {
+    margin-top: 10px;
+}
+%margin-top0 {
+    margin-top: 00px;
+}
+/* margin-right */
+%margin-right20 {
+    margin-right: 20px;
+}
+%margin-right10 {
+    margin-right: 10pxright
+}
+%margin-right00 {
+    margin-right: 0px;
+}
+/* margin-bottom */
+%margin-bottom20 {
+    margin-bottom: 20px;
+}
+%margin-bottom10 {
+    margin-bottom: 10px;
+}
+%margin-bottom0 {
+    margin-bottom: 0px;
+}
+/* margin-left*/
+%margin-left30 {
+    margin-left: 30px;
+}
+%margin-left20 {
+    margin-left: 20px;
+}
+%margin-left10 {
+    margin-left: 10px;
+}
+%margin-left0 {
+    margin-left: 0px;
+}
+
+/* ========== Paddings ==========*/
+
+%padding0 {
+    padding: 0;
+}
+%padding40_15 {
+    padding: 40px 15px;
+}
+%padding5 {
+    padding: 5px;
+}
+%padding5_15 {
+    padding: 5px 15px;
+}
+%padding15 {
+    padding: 15px;
+}
+%padding20_30 {
+    padding: 20px 30px;
+}
+/* padding-top */
+%padding-top40 {
+    padding-top: 40px;
+}
+%padding-top20 {
+    padding-top: 20px;
+}
+%padding-top10 {
+    padding-top: 10px;
+}
+%padding-top5 {
+    padding-top: 5px;
+}
+/* padding-right */
+%padding-right10 {
+    padding-right: 10px;
+}
+%padding-right15 {
+    padding-right: 15px;
+}
+/* padding-bottom */
+%padding-bottom40 {
+    padding-bottom: 40px;
+}
+%padding-bottom20 {
+    padding-bottom: 20px;
+}
+%padding-bottom10{
+    padding-bottom: 10px;
+}
+/* padding-left */
+%padding-left10 {
+    padding-left: 10px;
+}
+%padding-left15 {
+    padding-left: 15px;
+}
+%padding-left30 {
+    padding-left: 30px;
+}
+
+
+/* ========== Widths ========== */
+%width100 {
+    width: 100%;
+}
+
+/* ========== Typos ========== */
+// ajouter les font-weight aux typos
+%typo-title {
+    font-family: 'shrikhand';
+    font-size: 28px;
+    font-weight: 400;
+}
+%typo-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+%typo-fa {
+    font-size: 20px;
+}
+%typo-fa-small {
+    font-size: 16px;
+}
+
+%typo-big-text {
+    font-size: 16px;
+}
+
+%typo-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* ========== Borders & Border-radius ========== */

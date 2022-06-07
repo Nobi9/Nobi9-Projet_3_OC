@@ -1,0 +1,105 @@
+
+/* Ordre d'import des fichiers 
+
+1. Utils : Variables/ Fonctions / Mixins / Placeholders
+2. Feuilles de style de tiers (vendors)
+3. Base.
+4. Composants.
+5 Layout.
+6.Pages.
+7.Thèmes.
+*/
+
+// Le fichier Main ne contient que des imports
+
+Base/ 
+fondations du site (police de caractères et les normes à appliquer sur tout votre sit (box-sizing...) ;
+
+Utils/
+variables, fonctions, mixins et les  %placeholders pour les extensions (si vous en utilisez) ;
+
+
+layouts/ 
+blocs BEM qui contiennent ce qui est réutilisable, par exemple un header pour les mises en page de grande taille ou un footer ;
+
+components/
+ranger les blocs BEM qui sont plus indépendants, comme les boutons.
+
+pages/ 
+blocs de code spécifiques qui ne s’appliquent qu’à une seule page. 
+
+themes/
+code thématique, par exemple un style customisé pour Noël ou pour l’été. 
+
+vendors/ 
+feuilles de style externes comme Bootstrap ou jQuery UI. 
+En gros, il s’utilise pour tout CSS venant de l’extérieur.
+
+
+* Mémo du cours sur le Sass 
+
+
+Méthodologie BEM
+.projet
+.projet__card 							        : child
+.projet__card--active 						    : modifier
+$mint: (objet ou tableau d'objets) 				: variable
+
+Nesting : pas trop de niveau sinon trop de spécificité
+L'esperluette permet de ne pas ajouter de spécificité lors du nesting
+.block {
+	&__element {
+		&--modifier {
+		}
+	}
+}
+
+Penser à utiliser l'héritage des attributs
+
+---------------
+@mixin mixin-name ($value1: $value1-variable, $value2: $value2-variable  {
+	css-property: $value1 darken($value2, 10%);				: ensemble de règles stockées comme des variables
+}
+--> @include mixin-name()
+----------------
+%typographie {							: % = "placeholder", évite de créer une classe pour rien
+	....
+}
+h1 {
+	@extend %typography;					: permet d'éviter les répétitions créées par les mixins
+}
+---------------- 
+
+Mixin duplique un ensemble de règles alors que @extend duplique le sélecteur.
+Si vous avez besoin d’avoir recours à un argument, utilisez des mixins – vous n’avez pas d’autre choix.
+n’utilisez pas d’extensions.
+
+-----------------
+
+@if ( lightness($colour) < 25% ) {
+  $colour: lighten($colour, 10%);
+}@else{
+  $colour: darken($colour, 10%);
+}								: conditions etc.
+
+----------------
+
+@mixin heading-shadow($colour: $colour-primary, $size: $heading-shadow-size){
+  @if ( lightness($colour) < 25% ) {
+      $colour: lighten($colour, 10%);
+  }@else{
+      $colour: darken($colour, 10%);
+  }
+  text-shadow: $size $size $colour;
+}
+
+-----------------------
+
+@function lightness-shift($colour){
+  @if ( lightness($colour) < 25% ) {
+      $colour: lighten($colour, 10%);
+  }@else{
+      $colour: darken($colour, 10%);
+  }
+}
+*/
