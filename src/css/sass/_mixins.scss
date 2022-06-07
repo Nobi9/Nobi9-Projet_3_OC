@@ -14,6 +14,10 @@
 @mixin lightened-gradient-secondary-to-primary($color1,  $color2, $orientation) {
     background-image: linear-gradient($orientation, lighten($color1,5%) 0%, lighten($color2,5%) 90%);
 }
+@mixin darkened-gradient-secondary-to-primary($color1,  $color2, $orientation, $darkness) {
+    background-color: $color1;
+    background-image: linear-gradient($orientation, darken($color1, $darkness) 0%, darken($color2, $darkness) 90%);
+}
 
 /* ========= Box shadows ========== */
 @mixin box-shadow($color: $clr) {

@@ -158,9 +158,9 @@ p, h4 {
   .header {
     @include full-sizing($large-min-w, $large-max-w); 
     &__topbar {
-      @include full-sizing($medium-min-w, $medium-max-w);
+      @include full-sizing($large-min-w, $large-max-w);
       &__h1 {
-        @include full-sizing($medium-min-w, $medium-max-w);
+        @include full-sizing($large-min-w, $large-max-w);
       }
     }
   }
