@@ -92,6 +92,15 @@
         flex-wrap: wrap;
         justify-content: space-around;
         @extend %margin-top20;
+        .home-sol-heart {
+            top: 9px;
+            right: 19px;
+        }
+        .home-reg-heart {
+            top: 5px;
+            right: 5px;
+            @extend %padding5_15, %typo-fa;
+        }
     }
 }
 @media #{$medium-screen} {
