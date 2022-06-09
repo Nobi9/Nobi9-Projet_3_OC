@@ -100,7 +100,7 @@
 }   
 /* ========== Operation ========== */
 .op-section__ops__op {
-    @extend %margin-left20;
+    @extend %margin-left20, %margin-top20;
     color: $dark;
     height: 70px;
     width: 260px;
@@ -291,7 +291,7 @@
             text-align: end;
         }
         &__hovercheck {
-            display: flex;                              // Pas display tant que pas :hover
+            display: flex;                       
             justify-content: center;
             align-items: center;
             border-top-right-radius: 15px;

@@ -29,7 +29,7 @@ $breakpoint6: 1500px;*/
 }
 
 /* margin-top */
-.rest-section__cards, .menu-cards__card {
+.rest-section__cards, .menu-cards__card, .op-section__ops__op {
   margin-top: 20px;
 }
 
