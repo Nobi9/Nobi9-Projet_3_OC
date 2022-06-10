@@ -3,6 +3,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    outline: none;
 }
 
 body {
@@ -28,6 +29,10 @@ ul {
 }
 p, h4 {
   @extend %margin0, %padding5;
+}
+
+a {
+  color: $ultra-dark;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');

@@ -13,7 +13,6 @@
     align-items: center;
     animation: spinner-container 0s ease-in 3s forwards;
     &__spinner {
-        color: official;
         display: inline-block;
         position: relative;
         width: 80px;
@@ -132,10 +131,14 @@
     &__txt {
         color: $ultra-dark;
         font-weight: bold;
+        @extend %typo-text;
     }
 }
  /* ========== Gradient Button ========== */
 .gradient-button {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     width: 220px;
     height: 50px;
     border-radius: 30px;
@@ -219,8 +222,12 @@
     -webkit-background-clip: text;                  // Attache le background au text
     //background-clip: text
     -webkit-text-fill-color: transparent;           // Pour permettre de le rendre transparent et plus tard lui attribuer une couleur
-    opacity: 0;                                     
-    transition: opacity 1s ease-out;                // Transition placé sur élément avant :hover, pour avoir le retour également en transition
+    opacity: 0; 
+    transform: scale(0);    
+    /*-webkit-transition: -webkit-transform 1s ease-out; 
+    -moz-transition: -moz-transform 1s ease-out; 
+    -o-transition: -o-transform 1s ease-out; */                               
+    transition: opacity 1s ease-out;            // Transition placé sur élément avant :hover, pour avoir le retour également en transition
 }
 .regular-heart {
     @extend %typo-fa;
@@ -229,6 +236,7 @@
     &:hover~.solid-heart {                      // Au :hover
         @include gradient-secondary-to-primary($secondary-color, $primary-color, 0deg); // On remplit le coeur avec une couleur gradient
         opacity: 1;
+        //transform: scale(1);
     }
     &:hover {
         opacity: 0;
@@ -299,7 +307,7 @@
             width: 70px;
             background-color: $tertiary-color;
             transition: transform 0.5s, margin 0.5s;
-            translate: (70px, 0);
+            transform: translate(70px);
             margin: 0 -70px 0 0px;
             &__fa-solid {
                 @extend %typo-fa;
@@ -307,7 +315,7 @@
             }
         }
         &:hover &__hovercheck {
-            transform: translate(-70px, 0);
+            transform: translate(-70px);
             margin: 0 -70px 0 70px;
             
             &__fa-solid {

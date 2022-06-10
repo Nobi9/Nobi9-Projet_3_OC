@@ -144,17 +144,17 @@ $breakpoint6: 1500px;*/
   font-size: 16px;
 }
 
-.card__a__info__left-side p, .card__a__info__left-side h4, .op-section__ops__op__number, .footer__lines__line .link-2__p, .footer__lines__line .link-1__text {
+.card__a__info__left-side p, .card__a__info__left-side h4, .op-section__ops__op__txt, .op-section__ops__op__number, .footer__lines__line .link-2__p, .footer__lines__line .link-1__text {
   font-size: 14px;
   font-weight: 400;
 }
 
-/* ========== Borders & Border-radius ========== */
 /* ========== Global settings ==========*/
 * {
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -179,6 +179,10 @@ input:focus, textarea:focus, select:focus {
 ul {
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
+}
+
+a {
+  color: #353535;
 }
 
 .operation, .new, .footer-line a, .footer-line p {
@@ -358,7 +362,6 @@ ul {
           animation: spinner-container 0s ease-in 3s forwards;
 }
 .spin-container__spinner {
-  color: official;
   display: inline-block;
   position: relative;
   width: 80px;
@@ -508,6 +511,9 @@ ul {
 
 /* ========== Gradient Button ========== */
 .gradient-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 220px;
   height: 50px;
   border-radius: 30px;
@@ -583,6 +589,10 @@ ul {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  transform: scale(0);
+  /*-webkit-transition: -webkit-transform 1s ease-out; 
+  -moz-transition: -moz-transform 1s ease-out; 
+  -o-transition: -o-transform 1s ease-out; */
   transition: opacity 1s ease-out;
 }
 
@@ -662,14 +672,14 @@ ul {
   width: 70px;
   background-color: #99E2D0;
   transition: transform 0.5s, margin 0.5s;
-  translate: 70px, 0;
+  transform: translate(70px);
   margin: 0 -70px 0 0px;
 }
 .menu-cards__card__hovercheck__fa-solid {
   color: #fff;
 }
 .menu-cards__card:hover .menu-cards__card__hovercheck {
-  transform: translate(-70px, 0);
+  transform: translate(-70px);
   margin: 0 -70px 0 70px;
 }
 .menu-cards__card:hover .menu-cards__card__hovercheck__fa-solid {
@@ -1050,7 +1060,6 @@ ul {
   }
 }
 .main-menus__order-button {
-  display: block;
   align-self: center;
   margin-bottom: 40px;
 }
