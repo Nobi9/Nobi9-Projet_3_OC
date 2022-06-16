@@ -587,12 +587,9 @@ a {
   position: absolute;
   z-index: 1;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  transform: scale(0);
-  /*-webkit-transition: -webkit-transform 1s ease-out; 
-  -moz-transition: -moz-transform 1s ease-out; 
-  -o-transition: -o-transform 1s ease-out; */
   transition: opacity 1s ease-out;
 }
 

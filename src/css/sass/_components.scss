@@ -1,38 +1,38 @@
 /* ========== Spinner ========== */
 .spin-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 5;
+position: fixed;                                    //              
+left: 0;                                            //
+    top: 0;                                         //Recouvre la page
+    height: 100%;                                   //
+    width: 100%;                                    //
+    z-index: 5;                                     // 
     background-color: $ultra-dark;
     opacity: 0.9;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: spinner-container 0s ease-in 3s forwards;
-    &__spinner {
+    animation: spinner-container 0s ease-in 3s forwards;    // 
+    &__spinner {                                            //container du composant et ses dimensions
         display: inline-block;
-        position: relative;
+        position: relative;                                 // Relative pour après mettre en absolute
         width: 80px;
         height: 80px;
-        div {
+        div {                                               // Ensemble de 12 <div> 
             transform-origin: 40px 40px;
             animation: lds-spinner 1.2s linear infinite;
-            &:after {
+            &:after {                                       // Ce qui se positionne à la suite de la div (on rajoute des petits bouts)
                 content: " ";
                 display: block;
                 position: absolute;
                 top: 3px;
-                left: 37px; // mettre 200 + des inception ?
-                width: 6px;
+                left: 37px; 
+                width: 6px;                                  // diverses caractéristiques des <div>
                 height: 18px;
                 border-radius: 20%;
                 @include darkened-gradient-secondary-to-primary($primary-color, $secondary-color, 190deg, 20%);
             }
-            &:nth-child(1) {
-                transform: rotate(0deg);
+            &:nth-child(1) {                                  // Chaque div (nth-child(...)) est positionnée avec un angle différent pour former un cercle
+                transform: rotate(0deg);                      // L'animation qui consiste en un opacity 0 - 100 - 0 en 1.2s est délayée pour chaque <div> pour former une suite
                 animation-delay: -1.1s;
             }
             &:nth-child(2){
@@ -90,7 +90,7 @@
         }
     }
 }
-@keyframes spinner-container {
+@keyframes spinner-container {      // l'animation consiste juste à show / hide le component au bout de 3sec
     to {
         width:0;
         height:0;
@@ -220,13 +220,12 @@
     position: absolute;                             // Positionne les 2 coeurs l'un sur l'autre
     z-index: 1;                                     // Solid heart est sous regular
     -webkit-background-clip: text;                  // Attache le background au text
-    //background-clip: text
+    background-clip: text;
     -webkit-text-fill-color: transparent;           // Pour permettre de le rendre transparent et plus tard lui attribuer une couleur
-    opacity: 0; 
-    transform: scale(0);    
-    /*-webkit-transition: -webkit-transform 1s ease-out; 
+    opacity: 0;  
+    -webkit-transition: -webkit-transform 1s ease-out; 
     -moz-transition: -moz-transform 1s ease-out; 
-    -o-transition: -o-transform 1s ease-out; */                               
+    -o-transition: -o-transform 1s ease-out;                              
     transition: opacity 1s ease-out;            // Transition placé sur élément avant :hover, pour avoir le retour également en transition
 }
 .regular-heart {
@@ -236,7 +235,6 @@
     &:hover~.solid-heart {                      // Au :hover
         @include gradient-secondary-to-primary($secondary-color, $primary-color, 0deg); // On remplit le coeur avec une couleur gradient
         opacity: 1;
-        //transform: scale(1);
     }
     &:hover {
         opacity: 0;
@@ -298,27 +296,27 @@
             flex: 1;
             text-align: end;
         }
-        &__hovercheck {
+        &__hovercheck {                         // hovercheck est le composant-boite contenant la flèche qui s'affiche en tournant au survol du menu.
             display: flex;                       
             justify-content: center;
             align-items: center;
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
-            width: 70px;
+            width: 70px;                        // sa largeur (important)
             background-color: $tertiary-color;
             transition: transform 0.5s, margin 0.5s;
-            transform: translate(70px);
-            margin: 0 -70px 0 0px;
-            &__fa-solid {
+            transform: translate(70px);         // Un translate et une marge négative égaux à sa largeur 
+            margin: 0 -70px 0 0px;              // Permettent de pousser le composant hors du cadre (overflow: hidden), sans modifier le placement des autres
+            &__fa-solid {                       // composants qui sont placés par flexbox.
                 @extend %typo-fa;
                 color: $ultra-light;
             }
         }
-        &:hover &__hovercheck {
-            transform: translate(-70px);
-            margin: 0 -70px 0 70px;
+        &:hover &__hovercheck {                 // Toutes les propriétés suivantes arrivent lors d'un hover SUR LA CARD, mais impactent ses composants.
+            transform: translate(-70px);        
+            margin: 0 -70px 0 70px;             // Le composant reprend sa place et sa marge dans la CARD.
             
-            &__fa-solid {
+            &__fa-solid {                                       // la fleche effectue un 360° aller, et retour
                 animation: check-rot 0.75s ease-out both;
                 @keyframes check-rot {
                     to {
